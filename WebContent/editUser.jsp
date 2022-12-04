@@ -18,7 +18,7 @@ if (request.getParameter("userid") != null) {
 
     getConnection();
     con.createStatement().execute("use orders;");
-    PreparedStatement ps = con.prepareStatement("UPDATE customer(password,address) SET VALUES(?,?)");
+    PreparedStatement ps = con.prepareStatement("UPDATE customer SET password=? AND address=?");
     ps.setString(2, pass);
     ps.setString(7, address);
     ps.executeUpdate();
