@@ -54,6 +54,7 @@
 		out.println("<table><tr><th></th><th>Product Name</th><th>Price</th></tr>");
 		while (rst.next()) 
 		{
+			
 			out.print("<tr><td><a href= \"addcart.jsp?id=" + rst.getInt(1) + "&name=" + rst.getString(2)
 					+ "&price=" + rst.getDouble(3) + "\">Add to Cart</a></td>");
 			out.println("<td><a href = \"product.jsp?id=" + rst.getInt(1) + "\">"+rst.getString(2)+"</a></td><td>" + currFormat.format(rst.getDouble(3))
