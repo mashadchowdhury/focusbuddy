@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<title>Ray's Grocery</title>
+<title>FocusBuddy</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
