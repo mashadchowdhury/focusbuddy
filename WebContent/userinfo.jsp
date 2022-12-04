@@ -22,7 +22,7 @@ NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 try 
 {	
-	out.println("<h3>Customer Profile</h3>");
+	out.println("<h3>User Information Profile</h3>");
 	
 	getConnection();
 	Statement stmt = con.createStatement(); 
