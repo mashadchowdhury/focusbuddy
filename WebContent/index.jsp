@@ -18,6 +18,8 @@
 
 <h2 align="center"><a href="logout.jsp">Log out</a></h2>
 
+<h2 align="center"><a href="signup.jsp">I'm new! Let's Sign Up</a></h2>
+
 <%
 	String userName = (String) session.getAttribute("authenticatedUser");
 	if (userName != null)
