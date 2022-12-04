@@ -117,12 +117,12 @@ INSERT INTO category(categoryName) VALUES ('Introvert');
 INSERT INTO category(categoryName) VALUES ('Extrovert');
 
 
-INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Weekly Introvert FocusBuddy Subscription', 1, 'One week of A+s with the help of your Introvert FocusBuddy',20.00);
-INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Weekly Exrovert FocusBuddy Subscription',2,'One week of A+s with the help of your Exrovert FocusBuddy',20.00)
-INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Monthly Introvert FocusBuddy Subscription',1,'One month of A+s with the help of your Introvert FocusBuddy',60.00);
-INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Monthly Extrovert FocusBuddy Subscription',2,'One month of A+s with the help of your Extrovert FocusBuddy',60.00);
-INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Term Long Introvert FocusBuddy Subscription',1,'A term full of A+s with the help of your Introvert FocusBuddy',220.00);
-INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Term Long Extrovert FocusBuddy Subscription',2,'A term full of A+s with the help of your Extrovert FocusBuddy',220.00);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Weekly Introvert Subscription', 1, 'One week of A+s with the help of your Introvert FocusBuddy',20.00);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Weekly Exrovert Subscription',2,'One week of A+s with the help of your Exrovert FocusBuddy',20.00);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Monthly Introvert Subscription',1,'One month of A+s with the help of your Introvert FocusBuddy',60.00);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Monthly Extrovert Subscription',2,'One month of A+s with the help of your Extrovert FocusBuddy',60.00);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Term Long Introvert Subscription',1,'A term full of A+s with the help of your Introvert FocusBuddy',220.00);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Term Long Extrovert Subscription',2,'A term full of A+s with the help of your Extrovert FocusBuddy',220.00);
 
 
 
