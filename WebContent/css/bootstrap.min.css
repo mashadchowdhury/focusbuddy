@@ -2,9 +2,14 @@ h1 {
     font-size: 72px;
     text-align: center;
     background-color: transparent;
-    margin-top: 50px;
+    margin-top: 100px;
 }
+
 /* page header*/
+*{
+    padding:0;
+    margin:0;
+}
 body{
     position: relative;
 }
@@ -27,13 +32,13 @@ a{
     margin:auto;
 }
 .navbar {
+    width: 95%;
     margin:auto;
     min-height:70px;
-    position: fixed;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    width: 95%;
+    
     top: 0;
     z-index: 10;
 }
@@ -72,7 +77,7 @@ a{
 }
 
 .search-container, .confirmation-container, .error-message, .login-container, .product-info-container, .admin-table, .product-container {
-    background-color: #9bede9;
+    background-color: #00c2cb;
     border-radius: 20px;  
     margin: 90px 70px;
     padding: 20px 45px;
@@ -81,7 +86,7 @@ a{
 }
 .user-welcome {
     text-align: center;
-    color: #9bede9;
+    color: black;
 }
 
 .product-thumbnail {
@@ -121,11 +126,11 @@ a{
     vertical-align: middle;
 }
 table{
-    background-color: #9bede9;
+    background-color: black;
 
 }
 .fa-shopping-cart {
-    color: white;
+    color: black;
 }
 
 .main-directory {
