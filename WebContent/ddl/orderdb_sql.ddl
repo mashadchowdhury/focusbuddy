@@ -170,10 +170,10 @@ INSERT INTO orderproduct (orderId, productId, quantity, price) VALUES (@orderId,
 INSERT INTO orderproduct (orderId, productId, quantity, price) VALUES (@orderId, 20, 3, 10);
 
 -- New SQL DDL for lab 8
-UPDATE Product SET productImageURL = 'https://imgur.com/XjoknYG' WHERE ProductId = 1;
-UPDATE Product SET productImageURL = 'https://imgur.com/a/YmljkoA' WHERE ProductId = 2;
-UPDATE Product SET productImageURL = 'https://imgur.com/8qyXEgv' WHERE ProductId = 3;
-UPDATE Product SET productImageURL = 'https://imgur.com/vI4OftO' WHERE ProductId = 4;
-UPDATE Product SET productImageURL = 'https://imgur.com/57NKcum' WHERE ProductId = 5;
-UPDATE Product SET productImageURL = 'https://imgur.com/HnXdeaq' WHERE ProductId = 6;
+UPDATE Product SET productImageURL = 'https://i.imgur.com/XjoknYG.png' WHERE ProductId = 1;
+UPDATE Product SET productImageURL = 'https://i.imgur.com/gxmo2Oa.png' WHERE ProductId = 2;
+UPDATE Product SET productImageURL = 'https://i.imgur.com/8qyXEgv.png' WHERE ProductId = 3;
+UPDATE Product SET productImageURL = 'https://i.imgur.com/vI4OftO.png' WHERE ProductId = 4;
+UPDATE Product SET productImageURL = 'https://i.imgur.com/57NKcum.png' WHERE ProductId = 5;
+UPDATE Product SET productImageURL = 'https://i.imgur.com/HnXdeaq.png' WHERE ProductId = 6;
 
