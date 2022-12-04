@@ -29,6 +29,8 @@
 <h2 align="center"><a href="login.jsp">Login</a></h2>
 	
 <h2 align="center"><a href="userinfo.jsp">User's Information</a></h2>
+
+<h2 align="center"><a href="edit.jsp">Edit User Information</a></h2>
 	
 <h2 align="center"><a href="listprod.jsp">Begin Shopping</a></h2>
 

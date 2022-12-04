@@ -9,16 +9,11 @@ if (request.getParameter("userid") != null) {
         pass = request.getParameter("pass");
         address = request.getParameter("address");
 
-        // regex for email validation
-        String emailRegex = "^(.+)@(.+)$";
         // regex for password
-        String passRegex = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$";
+        String passRegex = "^(?=.*[0-9])(?=.*[a-z]).{6,}$";
 
         if (!pass.matches(passRegex)) {
             response.sendRedirect("signup.jsp?invalid=Password&redirect=" + (request.getParameter("redirect") != null ? request.getParameter("redirect") : "account.jsp"));
-            return;
-        } else if (!email.matches(emailRegex)) {
-            response.sendRedirect("signup.jsp?invalid=Email&redirect=" + (request.getParameter("redirect") != null ? request.getParameter("redirect") : "account.jsp"));
             return;
         }
 
