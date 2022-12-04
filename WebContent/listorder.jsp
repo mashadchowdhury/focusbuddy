@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FocusBuddy</title>
+<title>Ray's Grocery Order List</title>
 </head>
 <body>
 

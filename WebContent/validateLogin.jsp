@@ -3,7 +3,7 @@
 <%
 	String authenticatedUser = null;
 	session = request.getSession(true);
-	
+
 	try
 	{
 		authenticatedUser = validateLogin(out,request,session);
@@ -12,55 +12,56 @@
 	{	System.err.println(e); }
 
 	if(authenticatedUser != null)
-		response.sendRedirect("index.jsp");		
+		response.sendRedirect("index.jsp");		// Successful login
 	else
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("login.jsp");		// Failed login - redirect back to login page with a message 
 %>
 
 
 <%!
-String validateLogin(JspWriter out,HttpServletRequest request, HttpSession session) throws IOException{
-	String username = request.getParameter("username");
-	String password = request.getParameter("password");
-	String retStr = null;
-	
-	if(username == null || password == null)
-		return null;
-	if((username.length() == 0) || (password.length() == 0))
-		return null;
-	try {
-		getConnection();
-		String sql = "SELECT userid, password FROM customer WHERE userid = ? AND password = ?";
-		PreparedStatement pstmt = con.prepareStatement(sql);
-		pstmt.setString(1, username);
-		pstmt.setString(2, password);
-		ResultSet rs = pstmt.executeQuery();
+	String validateLogin(JspWriter out,HttpServletRequest request, HttpSession session) throws IOException
+	{
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String retStr = null;
 
-		if(rs.next()) {
-			retStr = rs.getString(1);
+		if(username == null || password == null)
+				return null;
+		if((username.length() == 0) || (password.length() == 0))
+				return null;
+
+		try 
+		{
+			getConnection();
+			Statement stmt = con.createStatement(); 
+			stmt.execute("USE orders");
+
+			String sql = "SELECT * FROM Customer WHERE userId = ? and password = ?";
+			PreparedStatement pstmt = con.prepareStatement(sql);			
+			pstmt.setString(1, username);
+			pstmt.setString(2, password);
+			
+			ResultSet rst = pstmt.executeQuery();
+					
+			if (rst.next())
+				retStr = username; // Login successful			
 		} 
-	}
-	catch (SQLException ex) {
-		out.println(ex);
-	}
-	finally{
-		try{
+		catch (SQLException ex) {
+			out.println(ex);
+		}
+		finally
+		{
 			closeConnection();
+		}	
+		
+		if(retStr != null)
+		{	session.removeAttribute("loginMessage");
+			session.setAttribute("authenticatedUser",username);
 		}
-		catch (SQLException e) {
-			out.println(e);
-		}
-	}	
+		else
+			session.setAttribute("loginMessage","Could not connect to the system using that username/password.");
 
-	if(retStr != null){	
-		session.removeAttribute("loginMessage");
-		session.setAttribute("authenticatedUser", username);
 		return retStr;
 	}
-	else{
-		session.setAttribute("loginMessage", "Could not connect to the system using that username/password.");
-		return retStr;
-	}
-}
-
 %>
+

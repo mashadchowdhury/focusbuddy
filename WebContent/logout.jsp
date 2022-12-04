@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Logout Screen</title>
-</head>
-<body>
-
-<h3>Logging out of System</h3>
-
 <%
-session.invalidate();
-response.sendRedirect("index.jsp");
+	// Remove the user from the session to log them out
+	session.setAttribute("authenticatedUser",null);
+	response.sendRedirect("index.jsp");		// Re-direct to main page
 %>
 
-</body>
-</html>

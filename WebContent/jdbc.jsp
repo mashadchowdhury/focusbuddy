@@ -10,7 +10,7 @@ Public methods:
 
 <%!
 	// User id, password, and server information
-	private String url = "jdbc:sqlserver://cosc304_sqlserver:1433;databasename=Orders;TrustServerCertificate=True";
+	private String url = "jdbc:sqlserver://cosc304_sqlserver:1433;TrustServerCertificate=True";
 	private String uid = "sa";
 	private String pw = "304#sa#pw";
 
@@ -34,7 +34,7 @@ Public methods:
 		Statement stmt = con.createStatement();
 	}
    
-	public void closeConnection() throws SQLException 
+	public void closeConnection()
 	{
 		try {
 			if (con != null)
