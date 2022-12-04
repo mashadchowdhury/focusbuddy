@@ -36,6 +36,8 @@
 
 <h2 align="center"><a href="admin.jsp">Administrators</a></h2>
 
+<h2 align="center"><a href="userinfo.jsp">New User! Sign up here</a></h2>
+
 <h2 align="center"><a href="logout.jsp">Log out</a></h2>
 
 <%
