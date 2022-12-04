@@ -17,12 +17,21 @@ if (request.getParameter("userid") != null) {
         postalCode = request.getParameter("postalCode");
         country = request.getParameter("country");
         // regex for email validation
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        String emailRegex = "^(.+)@(.+)$";
         // regex for phone number validation
         String phoneRegex = "^[0-9]{10}$";
-        // regex for strong password
-        String passRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,20}$";
-        
+        // regex for password
+        String passRegex = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$";
+        if (!pass.matches(passRegex)) {
+            response.sendRedirect("signup.jsp?invalid=Password&redirect=" + (request.getParameter("redirect") != null ? request.getParameter("redirect") : "account.jsp"));
+            return;
+        } else if (!email.matches(emailRegex)) {
+            response.sendRedirect("signup.jsp?invalid=Email&redirect=" + (request.getParameter("redirect") != null ? request.getParameter("redirect") : "account.jsp"));
+            return;
+        } else if (!phone.matches(phoneRegex)) {
+            response.sendRedirect("signup.jsp?invalid=Phone&redirect=" + (request.getParameter("redirect") != null ? request.getParameter("redirect") : "account.jsp"));
+            return;
+        }
         getConnection();
         con.createStatement().execute("use orders;");
         PreparedStatement ps = con.prepareStatement("insert into customer(userid,password,firstName,lastName,email,phonenum,address,city,state,postalCode,country) values(?,?,?,?,?,?,?,?,?,?,?)");
