@@ -21,7 +21,8 @@ if (request.getParameter("userid") != null) {
         // regex for phone number validation
         String phoneRegex = "^[0-9]{10}$";
         // regex for password
-        String passRegex = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$";
+        String passRegex = "^(?=.*[0-9])(?=.*[a-z]).{6,}$";
+
         if (!pass.matches(passRegex)) {
             response.sendRedirect("signup.jsp?invalid=Password&redirect=" + (request.getParameter("redirect") != null ? request.getParameter("redirect") : "account.jsp"));
             return;
@@ -32,9 +33,10 @@ if (request.getParameter("userid") != null) {
             response.sendRedirect("signup.jsp?invalid=Phone&redirect=" + (request.getParameter("redirect") != null ? request.getParameter("redirect") : "account.jsp"));
             return;
         }
+
         getConnection();
-        con.createStatement().execute("use orders;");
-        PreparedStatement ps = con.prepareStatement("insert into customer(userid,password,firstName,lastName,email,phonenum,address,city,state,postalCode,country) values(?,?,?,?,?,?,?,?,?,?,?)");
+        con.createStatement().execute("USE orders;");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO customer(userid,password,firstName,lastName,email,phonenum,address,city,state,postalCode,country) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1, userid);
         ps.setString(2, pass);
         ps.setString(3, firstName);
