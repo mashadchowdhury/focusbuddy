@@ -133,7 +133,7 @@ try
 			color = "#FFFFFF";
 		
 		String imageLoc = rst.getString(5);
-			out.println("<td><img src=\""+imageLoc+"\"></td>");
+			out.println("<td><img src= imageLoc></td>");
 
 		out.println("<td><a href=\"product.jsp?id="+id+"\"<font color=\"" + color + "\">" + rst.getString(2) + "</font></td>"
 				+ "<td><font color=\"" + color + "\">" + itemCategory + "</font></td>"
