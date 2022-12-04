@@ -35,7 +35,7 @@ if (request.getParameter("userid") != null) {
         }
 
         getConnection();
-        con.createStatement().execute("USE orders;");
+        con.createStatement().execute("use orders;");
         PreparedStatement ps = con.prepareStatement("INSERT INTO customer(userid,password,firstName,lastName,email,phonenum,address,city,state,postalCode,country) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1, userid);
         ps.setString(2, pass);
