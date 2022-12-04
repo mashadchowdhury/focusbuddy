@@ -8,7 +8,7 @@
 	<header>
 		<div class="container">
 			<nav class = "navbar">
-				<a git href ="/" class="nav-branding">FocusBuddy</a>
+				<a href ="index.jsp" class="nav-branding">FocusBuddy</a>
 				<u1 class="nav-menu">
 					<li class = "nav-link"><a href="index.jsp">Home</a></li>
 					<li class = "nav-link"><a href="login.jsp">Login</a></li>
