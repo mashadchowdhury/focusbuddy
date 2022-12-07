@@ -21,6 +21,7 @@
             if (invalid != null)
                 out.println("<h3>Invalid login information: " + request.getParameter("invalid") + "</h3>");
             %>
+            <input type="text" name="username" placeholder="Username" required /><br/>
             <input type="password" name="pass" placeholder="Password" required /><br/>
             <input type="text" name="address" placeholder="Address" required /><br/>
             <br/>

@@ -2,9 +2,9 @@
 <%@ include file="jdbc.jsp" %>
 
 <% 
-if (request.getParameter("userid") != null) {
-    String pass = "",address = "";
+    String user = "", pass = "",address = "";
     
+    user = request.getParameter("username");
     pass = request.getParameter("pass");
     address = request.getParameter("address");
 
@@ -18,12 +18,11 @@ if (request.getParameter("userid") != null) {
 
     getConnection();
     con.createStatement().execute("use orders;");
-    PreparedStatement ps = con.prepareStatement("UPDATE customer SET password=? AND address=?");
-    ps.setString(2, pass);
-    ps.setString(7, address);
+    PreparedStatement ps = con.prepareStatement("UPDATE customer SET password=?, address=? WHERE userid = ?;");
+    ps.setString(1, pass);
+    ps.setString(2, address);
+    ps.setString(3, user);
     ps.executeUpdate();
     closeConnection();
-    response.sendRedirect(request.getParameter("redirect") == null ? request.getParameter("redirect") : "index.jsp");
-    
-}
+    response.sendRedirect(request.getParameter("redirect") != null ? request.getParameter("redirect") : "index.jsp"); 
 %>
