@@ -13,6 +13,7 @@
 					<li class = "nav-link"><a href="index.jsp">Home</a></li>
 					<li class = "nav-link"><a href="login.jsp">Login</a></li>
 					<li class = "nav-link"><a href="userinfo.jsp">User's Information</a></li>
+					<!-- <li class = "nav-link"><a href="listuserorder.jsp">User's Orders</a></li> -->
 					<li class = "nav-link"><a href="listprod.jsp">Begin Shopping</a></li>
 					<li class = "nav-link"><a href="showcart.jsp">Shopping Cart</a></li>
 					<li class = "nav-link"><a href="signup.jsp">New User! Sign up here</a></li>
@@ -30,6 +31,8 @@
 <h2 align="center"><a href="login.jsp">Login</a></h2>
 <br/>	
 <h2 align="center"><a href="userinfo.jsp">User's Information</a></h2>
+<br/>	
+<h2 align="center"><a href="listuserorder.jsp">User's Orders</a></h2>
 <br/>	
 <h2 align="center"><a href="edit.jsp">Edit User Information</a></h2>
 <br/>	
