@@ -5,11 +5,8 @@
 
 <html>
 <head>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href ="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">   
-	<link href ="https://cdn.jsdelivr.net/npm/boxicon@latest/css/boxicon.min.css" rel="stylesheet"> 
 <title>FocusBuddy</title>
-      
+<link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <%
 	String userName = (String) session.getAttribute("authenticatedUser");
@@ -163,4 +160,3 @@ try
 
 </body>
 </html>
-

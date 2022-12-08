@@ -40,7 +40,6 @@ try
 		out.println("<h2>"+rst.getString(2)+"</h2>");
 		
 		int prodId = rst.getInt(1);
-		out.println("<br><h3><a href=\"listprod.jsp\">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Continue Shopping</a>");
 		out.println("<table><tr>");
 		out.println("<th>Id</th><td>" + prodId + "</td></tr>"				
 				+ "<tr><th>Price</th><td>" + currFormat.format(rst.getDouble(3)) + "</td></tr>");
