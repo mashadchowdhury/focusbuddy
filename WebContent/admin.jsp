@@ -13,6 +13,9 @@
 </head>
 <%
 	String userName = (String) session.getAttribute("authenticatedUser");
+	if(userName.length() == 0){
+		userName = "Login";
+	}
 %>
 <body>
 	<header>
@@ -62,27 +65,11 @@
 String sql = "SELECT year(orderDate), month(orderDate), day(orderDate), SUM(totalAmount) FROM OrderSummary GROUP BY year(orderDate), month(orderDate), day(orderDate)";
 String sql2 = "SELECT firstName,lastName FROM Customer";
 String sql3 = "INSERT INTO product(productId, productName, productPrice, productDesc, categoryId) VALUES (?, ?, ?, ?, ?);";
-
+String id = "", name = "", price = "", desc = "", cate = "";
 NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 try 
 {	
-	//add new product
-	id = request.getParameter("id");
-    name = request.getParameter("name");
-    price = request.getParameter("price");
-    desc = request.getParameter("desc");
-    cate = request.getParameter("cate");
-
-	con.createStatement().execute("use orders;");
-    PreparedStatement ps = con.prepareStatement("UPDATE customer SET password=?, address=? WHERE userid = ?;");
-    ps.setString(1, pass);
-    ps.setString(2, address);
-    ps.setString(3, user);
-    ps.executeUpdate();
-    closeConnection();
-    response.sendRedirect(request.getParameter("redirect") != null ? request.getParameter("redirect") : "index.jsp"); 
-
 	//customer names
 	out.println("<br><h3>Current Customers</h3><br>");
 	
@@ -111,6 +98,24 @@ try
 		out.println("<tr><td>"+rst.getString(1)+"-"+rst.getString(2)+"-"+rst.getString(3)+"</td><td>"+currFormat.format(rst.getDouble(4))+"</td></tr>");
 	}
 	out.println("</table>");
+
+	//add new product
+	id = request.getParameter("id");
+    name = request.getParameter("name");
+    price = request.getParameter("price");
+    desc = request.getParameter("desc");
+    cate = request.getParameter("cate");
+
+	con.createStatement().execute("use orders;");
+    PreparedStatement ps = con.prepareStatement(sql3);
+    ps.setString(1, id);
+    ps.setString(2, name);
+    ps.setString(3, price);
+    ps.setString(4, desc);
+    ps.setString(5, cate);
+    ps.executeUpdate();
+    response.sendRedirect(request.getParameter("redirect") != null ? request.getParameter("redirect") : "listprod.jsp"); 
+
 
 }
 catch (SQLException ex) 
