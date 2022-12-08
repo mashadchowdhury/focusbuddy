@@ -6,6 +6,9 @@
 	<link href ="https://cdn.jsdelivr.net/npm/boxicon@latest/css/boxicon.min.css" rel="stylesheet">         
 	<title>FocusBuddy Main Page</title>
 </head>
+<%
+	String userName = (String) session.getAttribute("authenticatedUser");
+%>
 <body>
 	<script type ="text/javascript" src = "css/script.js"></script>
 	<header>
@@ -15,7 +18,7 @@
 					<li><a href="userinfo.jsp">User's Information</a></li>
 					<li><a href="listprod.jsp">Begin Shopping</a></li>
 					<li><a href="logout.jsp">Logout</a></li>
-					<li><a href = "userinfo.jsp">USERNAME</a></li>
+					<li><a href = "userinfo.jsp"><%out.print(userName);%></a></li>
 				</u1>
 
 		<div class = "main">
@@ -48,7 +51,6 @@
 <br/>	<br/>
 //https://imageio.forbes.com/specials-images/imageserve/5e020def4e2917000783d582/0x0.jpg?format=jpg&width=1200
 <%
-	String userName = (String) session.getAttribute("authenticatedUser");
 	if (userName != null)
 		out.println("<h3 align=\"center\">Signed in as: "+userName+"</h3>");
 %>
