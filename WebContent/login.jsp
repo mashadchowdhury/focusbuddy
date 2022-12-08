@@ -6,6 +6,9 @@
 	<link href ="https://cdn.jsdelivr.net/npm/boxicon@latest/css/boxicon.min.css" rel="stylesheet">  
 <title>Login Screen</title>
 </head>
+<%
+	String userName = (String) session.getAttribute("authenticatedUser");
+%>
 <body>
 	<header>
 		<a href = "index.jsp" class = "logo"><i class = "ri-home-heart-fill"></i><span>FocusBuddy</span></a>
@@ -14,7 +17,7 @@
 					<li><a href="userinfo.jsp">User's Information</a></li>
 					<li><a href="listprod.jsp">Begin Shopping</a></li>
 					<li><a href="logout.jsp">Logout</a></li>
-					<li><a href = "userinfo.jsp">USERNAME</a></li>
+					<li><a href = "userinfo.jsp"><%out.print(userName);%></a></li>
 				</u1>
 
 		<div class = "main">
