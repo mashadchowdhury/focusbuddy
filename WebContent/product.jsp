@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<title>Ray's Grocery - Product Information</title>
+<title>Product Information</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -16,7 +16,7 @@
 // Get product name to search for
 String productId = request.getParameter("id");
 
-String sql = "SELECT productId, productName, productPrice, productImageURL, productImage FROM Product P  WHERE productId = ?";
+String sql = "SELECT productId, productName, productPrice, productImageURL, productImage, productDesc FROM Product P  WHERE productId = ?";
 
 NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
@@ -40,6 +40,7 @@ try
 		out.println("<h2>"+rst.getString(2)+"</h2>");
 		
 		int prodId = rst.getInt(1);
+		out.println("<br><h3><a href=\"listprod.jsp\">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Continue Shopping</a>");
 		out.println("<table><tr>");
 		out.println("<th>Id</th><td>" + prodId + "</td></tr>"				
 				+ "<tr><th>Price</th><td>" + currFormat.format(rst.getDouble(3)) + "</td></tr>");
@@ -55,11 +56,12 @@ try
 			out.println("<img src=\"displayImage.jsp?id="+prodId+"\">");	
 		out.println("</table>");
 		
+		out.println("<br><h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Description: </h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + rst.getString(6)+"<br>");
 
-		out.println("<h3><a href=\"addcart.jsp?id="+prodId+ "&name=" + rst.getString(2)
-								+ "&price=" + rst.getDouble(3)+"\">Add to Cart</a></h3>");		
+		out.println("<br><h3><a href=\"addcart.jsp?id="+prodId+ "&name=" + rst.getString(2)
+								+ "&price=" + rst.getDouble(3)+"\">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Add to Cart</a></h3>");		
 		
-		out.println("<h3><a href=\"listprod.jsp\">Continue Shopping</a>");
+		out.println("<br><h3><a href=\"listprod.jsp\">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Continue Shopping</a><br><br><br>");
 	}
 } 
 catch (SQLException ex) {
