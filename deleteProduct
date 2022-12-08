@@ -1,0 +1,30 @@
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.ArrayList" %>
+
+<%
+// Get the current list of products
+
+@SuppressWarnings({"unchecked"})
+HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Object>>) session.getAttribute("productList");
+
+// If the list is empty, create a new one
+if (productList == null) {
+    productList = new HashMap<String, ArrayList<Object>>();
+}
+// Read product details from the form
+String productID = request.getParameter("productID");
+String productName = request.getParameter("productName");
+String productPrice = request.getParameter("productPrice");
+String productImage = request.getParameter("productImage");
+String productCategory = request.getParameter("productCategory");
+// delete the product selected
+if (request.getParameter("delete") != null) {
+    productList.remove(productID);
+}
+// Save the updated list of products
+        session.setAttribute("productList", productList);
+%>
+
+<!--
+<jsp:forward page="showcart.jsp" />
+        -->
