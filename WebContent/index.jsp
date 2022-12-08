@@ -2,27 +2,27 @@
 <html>
 <head>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-        <title>FocusBuddy Main Page</title>
+	<link href ="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">   
+	<link href ="https://cdn.jsdelivr.net/npm/boxicon@latest/css/boxicon.min.css" rel="stylesheet">         
+	<title>FocusBuddy Main Page</title>
 </head>
 <body>
+	<script type ="text/javascript" src = "css/script.js"></script>
 	<header>
-		<div class="container">
-			<nav class = "navbar">
-				<a href ="index.jsp" class="nav-branding">FocusBuddy</a>
-				<u1 class="nav-menu">
-					<li class = "nav-link"><a href="index.jsp">Home</a></li>
-					<li class = "nav-link"><a href="login.jsp">Login</a></li>
-					<li class = "nav-link"><a href="userinfo.jsp">User's Information</a></li>
-					<!-- <li class = "nav-link"><a href="listuserorder.jsp">User's Orders</a></li> -->
-					<li class = "nav-link"><a href="listprod.jsp">Begin Shopping</a></li>
-					<li class = "nav-link"><a href="showcart.jsp">Shopping Cart</a></li>
-					<li class = "nav-link"><a href="signup.jsp">New User! Sign up here</a></li>
-					<li class = "nav-link"><a href="logout.jsp">Logout</a></li>
-
-
+		<a href = "index.jsp" class = "logo"><i class = "ri-home-heart-fill"></i><span>FocusBuddy</span></a>
+		
+				<u1 class="navbar">
+					<li><a href="userinfo.jsp">User's Information</a></li>
+					<li><a href="listprod.jsp">Begin Shopping</a></li>
+					<li><a href="logout.jsp">Logout</a></li>
+					<li><a href = "userinfo.jsp">USERNAME</a></li>
 				</u1>
 
-			</nav>
+		<div class = "main">
+			<a href="showcart.jsp" class="user"><i class="ri-shopping-cart-fill"></i>Shopping Cart</a>
+			<a href ="login.jsp" class ="user"><i class ="ri-user-fill"></i>Sign In</a>
+			<a href ="signup.jsp" class ="user">Register</a>
+			
 		</div>
 	</header>
 	<br/>		
