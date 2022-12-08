@@ -12,8 +12,6 @@
 	String userName = (String) session.getAttribute("authenticatedUser");
 %>
 <body>
-<<<<<<< HEAD
-=======
 	<header>
 		<a href = "index.jsp" class = "logo"><i class = "ri-home-heart-fill"></i><span>FocusBuddy</span></a>
 		
@@ -31,7 +29,6 @@
 			
 		</div>
 	</header>
->>>>>>> 712c16b000ccb4616861a4fec8d155e82ccfb102
 
 <%@ include file="header.jsp" %>
 
