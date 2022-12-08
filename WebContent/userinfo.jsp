@@ -6,6 +6,10 @@
 <link href ="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">   
 <link href ="https://cdn.jsdelivr.net/npm/boxicon@latest/css/boxicon.min.css" rel="stylesheet"> 
 </head>
+<head>
+	<h1>FocusBuddy</h1>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	</head>
 <body>
 	<header>
 		<a href = "index.jsp" class = "logo"><i class = "ri-home-heart-fill"></i><span>FocusBuddy</span></a>

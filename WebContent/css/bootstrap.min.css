@@ -4,14 +4,19 @@ h1 {
     background-color: transparent;
     margin-top: 100px;
 }
-
-
+h5 {
+    font-size: 72px;
+    text-align: center;
+    background-color: transparent;
+    margin-top: 200px;
+}
 /* page header*/
 *{
     padding:0;
     margin:0;
 }
 body{
+
     min-height:100vh;
     color :black;
     position: relative;
@@ -20,18 +25,15 @@ body{
 header{
     position:fixed;
     width:100%;
-    top:0;
+    margin-top:50px;
     right: 0;
-    z-index :1000;
+    z-index :10;
     background-color: #00c2cb ;
     display: flex;
     align-items:center;
     justify-content: space-between;
-    padding: 28px 12%;
+    padding: 100px 12%;
     transition: all .50s ease;
-
-
-
 }
 li{
     list-style: none;
@@ -112,7 +114,7 @@ li{
 
     .navbar{
         position:absolute;
-        top:100%;
+        margin-top:100%;
         right: -100%;
         width:270px;
         height:29vh;
@@ -223,7 +225,7 @@ table{
     min-width: auto;
     height: auto;
     opacity: 0.85;
-    top: 0;
+    margin-top: 0;
 
 }
 .card {

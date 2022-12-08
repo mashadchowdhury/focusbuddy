@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<h1>FocusBuddy</h1>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		</head>
 <head>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href ="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">   
