@@ -1,3 +1,8 @@
+<%@ page import="java.sql.*" %>
+<%@ include file="auth.jsp"%>
+<%@ page import="java.text.NumberFormat" %>
+<%@ include file="jdbc.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,12 +18,36 @@
 	String userName = (String) session.getAttribute("authenticatedUser");
 %>
 
+<div style="margin:0 auto;text-align:center;display:inline"></div>
+
+    <div class="add-prod">
+      <h1>Add New Product</h1>
+        <form method="get" action="admin.jsp" class="login-form">
+            <%
+            String invalid = request.getParameter("invalid");
+            if (invalid != null)
+                out.println("<h3>Invalid login information: " + request.getParameter("invalid") + "</h3>");
+            %>
+			<input type="text" name="id" placeholder="Product Id" required /><br/>
+            <input type="text" name="name" placeholder="Product Name" required /><br/>
+            <input type="number" name="price" placeholder="Product Price" required /><br/>
+            <input type="text" name="desc" placeholder="Product Desc" required /><br/>
+			<input type="number" name="cate" placeholder="Product Category" required /><br/>
+
+            <br/>
+            <button type="submit" class="sub-button">Add Product</button>
+        </form>
+    </div>
+    </body>
+</html>
+
 <%
 
-// Print out total order amount by day
 String sql = "SELECT year(orderDate), month(orderDate), day(orderDate), SUM(totalAmount) FROM OrderSummary GROUP BY year(orderDate), month(orderDate), day(orderDate)";
 
 String sql2 = "SELECT firstName,lastName FROM Customer";
+
+String sql3 = "INSERT INTO product(productId, productName, productPrice, productDesc, categoryId) VALUES (?, ?, ?, ?, ?);";
 
 NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
@@ -53,6 +82,9 @@ try
 		out.println("<tr><td>"+rst.getString(1)+"-"+rst.getString(2)+"-"+rst.getString(3)+"</td><td>"+currFormat.format(rst.getDouble(4))+"</td></tr>");
 	}
 	out.println("</table>");
+
+	//add new product
+
 }
 catch (SQLException ex) 
 { 	out.println(ex); 
