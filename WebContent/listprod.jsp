@@ -65,7 +65,7 @@ if (hasNameParam && hasCategoryParam)
 {
 	filter = "<h3>Products containing '"+name+"' in category: '"+category+"'</h3>";
 	name = '%'+name+'%';
-	sql = "SELECT productId, productName, productPrice, categoryName FROM Product P JOIN Category C ON P.categoryId = C.categoryId WHERE productName LIKE ? AND categoryName = ?";
+	sql = "SELECT productId, productName, productPrice, categoryName, productImageURL FROM Product P JOIN Category C ON P.categoryId = C.categoryId WHERE productName LIKE ? AND categoryName LIKE ?";
 }
 else if (hasNameParam)
 {
@@ -76,7 +76,7 @@ else if (hasNameParam)
 else if (hasCategoryParam)
 {
 	filter = "<h3>Products in category: '"+category+"'</h3>";
-	sql = "SELECT productId, productName, productPrice, categoryName, productImageURL FROM Product P JOIN Category C ON P.categoryId = C.categoryId WHERE categoryName = ?";
+	sql = "SELECT productId, productName, productPrice, categoryName, productImageURL FROM Product P JOIN Category C ON P.categoryId = C.categoryId WHERE categoryName LIKE ?";
 }
 else
 {
@@ -123,8 +123,8 @@ try
 		if (color == null)
 			color = "#FFFFFF";
 		
-		String imageLoc = rst.getString(5);
-			out.println("<td><img src= imageLoc></td>");
+		String imageLoca = rst.getString(5);
+			out.println("<td><img src=\""+imageLoca+"\"></td>");
 
 		out.println("<td><a href=\"product.jsp?id="+id+"\"<font color=\"" + color + "\">" + rst.getString(2) + "</font></td>"
 				+ "<td><font color=\"" + color + "\">" + itemCategory + "</font></td>"

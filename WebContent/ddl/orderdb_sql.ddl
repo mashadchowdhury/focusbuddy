@@ -113,11 +113,11 @@ CREATE TABLE review (
         ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-INSERT INTO category(categoryId, categoryName) VALUES (1, 'Introvert');
-INSERT INTO category(categoryId, categoryName) VALUES (2, 'Extrovert');
+INSERT INTO category(categoryName) VALUES ('Introvert');
+INSERT INTO category(categoryName) VALUES ('Extrovert');
 
 
-INSERT INTO product(productName, categoryId, productDesc, productPrice) VALUES ('Weekly Introvert Subscription', 1, 'One week of A+s with the help of your Introvert FocusBuddy',20.00);
+INSERT INTO product(productName, categoryId, productDesc, productPrice, productImageURL) VALUES ('Weekly Introvert Subscription', 1, 'One week of A+s with the help of your Introvert FocusBuddy',20.00, 'https://i.imgur.com/XjoknYG.png');
 INSERT INTO product(productName, categoryId, productDesc, productPrice) VALUES ('Weekly Exrovert Subscription',2,'One week of A+s with the help of your Exrovert FocusBuddy',20.00);
 INSERT INTO product(productName, categoryId, productDesc, productPrice) VALUES ('Monthly Introvert Subscription',1,'One month of A+s with the help of your Introvert FocusBuddy',60.00);
 INSERT INTO product(productName, categoryId, productDesc, productPrice) VALUES ('Monthly Extrovert Subscription',2,'One month of A+s with the help of your Extrovert FocusBuddy',60.00);
@@ -170,10 +170,9 @@ INSERT INTO orderproduct (orderId, productId, quantity, price) VALUES (@orderId,
 INSERT INTO orderproduct (orderId, productId, quantity, price) VALUES (@orderId, 20, 3, 10);
 
 -- New SQL DDL for lab 8
-UPDATE Product SET productImageURL = 'https://i.imgur.com/XjoknYG.png' WHERE ProductId = 1;
-UPDATE Product SET productImageURL = 'https://i.imgur.com/gxmo2Oa.png' WHERE ProductId = 2;
-UPDATE Product SET productImageURL = 'https://i.imgur.com/8qyXEgv.png' WHERE ProductId = 3;
-UPDATE Product SET productImageURL = 'https://i.imgur.com/vI4OftO.png' WHERE ProductId = 4;
-UPDATE Product SET productImageURL = 'https://i.imgur.com/57NKcum.png' WHERE ProductId = 5;
-UPDATE Product SET productImageURL = 'https://i.imgur.com/HnXdeaq.png' WHERE ProductId = 6;
+UPDATE product SET productImageURL = 'https://i.imgur.com/gxmo2Oa.png' WHERE productId = 2;
+UPDATE product SET productImageURL = 'https://i.imgur.com/8qyXEgv.png' WHERE productId = 3;
+UPDATE product SET productImageURL = 'https://i.imgur.com/vI4OftO.png' WHERE productId = 4;
+UPDATE product SET productImageURL = 'https://i.imgur.com/57NKcum.png' WHERE productId = 5;
+UPDATE product SET productImageURL = 'https://i.imgur.com/HnXdeaq.png' WHERE productId = 6;
 
