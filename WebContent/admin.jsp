@@ -17,7 +17,7 @@
 		userName = "Login";
 	}
 %>
-<body>
+<body> <center>
 	<header>
 		<a href = "index.jsp" class = "logo"><i class = "ri-home-heart-fill"></i><span>FocusBuddy</span></a>
 		
@@ -39,7 +39,7 @@
 <div style="margin:0 auto;text-align:center;display:inline"></div>
 
     <div class="add-prod">
-      <h1>Admin Roles</h1>
+      <br><h1>Admin Roles</h1> <hr><br> 
         <form method="get" action="newprod.jsp" class="login-form">
 			<h3>Add New Product</h3><br>
             <%
@@ -105,7 +105,7 @@ finally
 	closeConnection();	
 }
 %>
-
+</center>
 </body>
 </html>
 

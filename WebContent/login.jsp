@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<h1>FocusBuddy</h1>
+		<br><h1>Welcome to FocusBuddy!</h1><hr><br> 
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		</head>
 <head>
@@ -54,7 +54,7 @@ if (session.getAttribute("loginMessage") != null)
 	<td><input type="password" name="password" size=10 maxlength="10"></td>
 </tr>
 </table>
-<br/>
+<br/> <br>
 <input class="submit" type="submit" name="Submit2" value="Log In">
 </form>
 

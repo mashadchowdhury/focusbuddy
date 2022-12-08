@@ -7,10 +7,10 @@
 <link href ="https://cdn.jsdelivr.net/npm/boxicon@latest/css/boxicon.min.css" rel="stylesheet"> 
 </head>
 <head>
-	<h1>FocusBuddy</h1>
+	<br><h1>FocusBuddy</h1><hr><br> 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	</head>
-<body>
+<body> <center>
 	<header>
 		<a href = "index.jsp" class = "logo"><i class = "ri-home-heart-fill"></i><span>FocusBuddy</span></a>
 		
@@ -46,7 +46,7 @@ NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 try 
 {	
-	out.println("<h3>User Information Profile</h3>");
+	out.println("<h2>User Information Profile</h2><br>");
 	
 	getConnection();
 	Statement stmt = con.createStatement(); 
@@ -81,7 +81,7 @@ finally
 	closeConnection();	
 }
 %>
-
+</center>
 </body>
 </html>
 
