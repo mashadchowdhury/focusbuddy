@@ -117,7 +117,7 @@ INSERT INTO category(categoryName) VALUES ('Introvert');
 INSERT INTO category(categoryName) VALUES ('Extrovert');
 
 
-INSERT INTO product(productName, categoryId, productDesc, productPricegi) VALUES ('Weekly Introvert Subscription', 1, 'One week of A+s with the help of your Introvert FocusBuddy',20.00);
+INSERT INTO product(productName, categoryId, productDesc, productPrice) VALUES ('Weekly Introvert Subscription', 1, 'One week of A+s with the help of your Introvert FocusBuddy',20.00);
 INSERT INTO product(productName, categoryId, productDesc, productPrice) VALUES ('Weekly Exrovert Subscription',2,'One week of A+s with the help of your Exrovert FocusBuddy',20.00);
 INSERT INTO product(productName, categoryId, productDesc, productPrice) VALUES ('Monthly Introvert Subscription',1,'One month of A+s with the help of your Introvert FocusBuddy',60.00);
 INSERT INTO product(productName, categoryId, productDesc, productPrice) VALUES ('Monthly Extrovert Subscription',2,'One month of A+s with the help of your Extrovert FocusBuddy',60.00);
