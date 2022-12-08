@@ -20,22 +20,7 @@
   <option>All</option>
 
 <%
-/*
-// Could create category list dynamically - more adaptable, but a little more costly
-try               
-{
-	getConnection();
- 	ResultSet rst = executeQuery("SELECT DISTINCT categoryName FROM Product");
-    while (rst.next()){
-		out.println("<option>"+rst.getString(1)+"</option>");
-	}
-}
-catch (SQLException ex)
-{      
-	out.println(ex);
-}
-*/
-%>
+
 
   <option>Introverts</option>
   <option>Extroverts</option>

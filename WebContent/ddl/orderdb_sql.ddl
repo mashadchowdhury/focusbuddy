@@ -113,8 +113,8 @@ CREATE TABLE review (
         ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-INSERT INTO category(categoryName) VALUES ('Introvert');
-INSERT INTO category(categoryName) VALUES ('Extrovert');
+INSERT INTO category(categoryName) VALUES ('Introverts');
+INSERT INTO category(categoryName) VALUES ('Extroverts');
 
 
 INSERT INTO product(productName, categoryId, productDesc, productPricegi) VALUES ('Weekly Introvert Subscription', 1, 'One week of A+s with the help of your Introvert FocusBuddy',20.00);

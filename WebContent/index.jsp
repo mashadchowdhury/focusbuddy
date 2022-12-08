@@ -46,7 +46,7 @@
 <br/>	
 <h2 align="center"><a href="logout.jsp">Log out</a></h2>
 <br/>	<br/>
-
+//https://imageio.forbes.com/specials-images/imageserve/5e020def4e2917000783d582/0x0.jpg?format=jpg&width=1200
 <%
 	String userName = (String) session.getAttribute("authenticatedUser");
 	if (userName != null)
