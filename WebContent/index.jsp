@@ -48,9 +48,11 @@
 <h2 align="center"><a href="signup.jsp">New User! Sign up here</a></h2>
 <br/>	
 <h2 align="center"><a href="logout.jsp">Log out</a></h2>
+<center><img  src = 'https://imageio.forbes.com/specials-images/imageserve/5e020def4e2917000783d582/0x0.jpg?format=jpg&width=1200'></center>
 <br/>	<br/>
-//https://imageio.forbes.com/specials-images/imageserve/5e020def4e2917000783d582/0x0.jpg?format=jpg&width=1200
+//
 <%
+
 	if (userName != null)
 		out.println("<h3 align=\"center\">Signed in as: "+userName+"</h3>");
 %>
