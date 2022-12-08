@@ -13,12 +13,18 @@
 <body>
 
 <%
+	String userName = (String) session.getAttribute("authenticatedUser");
+%>
+
+
+<%
 // Get the current list of products
 @SuppressWarnings({"unchecked"})
 HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Object>>) session.getAttribute("productList");
 
 if (productList == null)
-{	out.println("<H1>Your shopping cart is empty!</H1>");
+{	
+	out.println("<H1>Your shopping cart is empty!</H1>");
 	productList = new HashMap<String, ArrayList<Object>>();
 }
 else
