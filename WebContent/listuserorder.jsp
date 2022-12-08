@@ -7,9 +7,9 @@
 <head>
 <title>Order List</title>
 </head>
-<body>
+<body><center>
 
-<h1>Your Order List</h1>
+<h1>Your Order List</h1><hr><br>
 
 <%
 	String userName = (String) session.getAttribute("authenticatedUser");
@@ -70,5 +70,6 @@ finally
 	closeConnection();
 }
 %>
+</center>
 </body>
 </html>
