@@ -40,7 +40,7 @@
 
     <div class="add-prod">
       <h1>Admin Roles</h1>
-        <form method="get" action="admin.jsp" class="login-form">
+        <form method="get" action="newprod.jsp" class="login-form">
 			<h3>Add New Product</h3><br>
             <%
             String invalid = request.getParameter("invalid");
@@ -63,8 +63,7 @@
 <%
 String sql = "SELECT year(orderDate), month(orderDate), day(orderDate), SUM(totalAmount) FROM OrderSummary GROUP BY year(orderDate), month(orderDate), day(orderDate)";
 String sql2 = "SELECT firstName,lastName FROM Customer";
-String sql3 = "INSERT INTO product(productName, productPrice, productDesc, categoryId) VALUES (?, ?, ?, ?);";
-String name = "", price = "", desc = "", cate = "";
+
 NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 try 
