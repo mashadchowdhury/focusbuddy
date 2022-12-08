@@ -47,7 +47,6 @@
             if (invalid != null)
                 out.println("<h3>Invalid information: " + request.getParameter("invalid") + "</h3>");
             %>
-			<input type="text" name="id" placeholder="Product Id" required /><br/>
             <input type="text" name="name" placeholder="Product Name" required /><br/>
             <input type="number" name="price" placeholder="Product Price" required /><br/>
             <input type="text" name="desc" placeholder="Product Desc" required /><br/>
@@ -64,8 +63,8 @@
 <%
 String sql = "SELECT year(orderDate), month(orderDate), day(orderDate), SUM(totalAmount) FROM OrderSummary GROUP BY year(orderDate), month(orderDate), day(orderDate)";
 String sql2 = "SELECT firstName,lastName FROM Customer";
-String sql3 = "INSERT INTO product(productId, productName, productPrice, productDesc, categoryId) VALUES (?, ?, ?, ?, ?);";
-String id = "", name = "", price = "", desc = "", cate = "";
+String sql3 = "INSERT INTO product(productName, productPrice, productDesc, categoryId) VALUES (?, ?, ?, ?);";
+String name = "", price = "", desc = "", cate = "";
 NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 try 
@@ -98,25 +97,6 @@ try
 		out.println("<tr><td>"+rst.getString(1)+"-"+rst.getString(2)+"-"+rst.getString(3)+"</td><td>"+currFormat.format(rst.getDouble(4))+"</td></tr>");
 	}
 	out.println("</table>");
-
-	//add new product
-	id = request.getParameter("id");
-    name = request.getParameter("name");
-    price = request.getParameter("price");
-    desc = request.getParameter("desc");
-    cate = request.getParameter("cate");
-
-	con.createStatement().execute("use orders;");
-    PreparedStatement ps = con.prepareStatement(sql3);
-    ps.setString(1, id);
-    ps.setString(2, name);
-    ps.setString(3, price);
-    ps.setString(4, desc);
-    ps.setString(5, cate);
-    ps.executeUpdate();
-    response.sendRedirect(request.getParameter("redirect") != null ? request.getParameter("redirect") : "listprod.jsp"); 
-
-
 }
 catch (SQLException ex) 
 { 	out.println(ex); 
