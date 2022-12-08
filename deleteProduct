@@ -15,14 +15,22 @@ if (productList == null) {
 String productID = request.getParameter("productID");
 String productName = request.getParameter("productName");
 String productPrice = request.getParameter("productPrice");
-String productImage = request.getParameter("productImage");
 String productCategory = request.getParameter("productCategory");
 // delete the product selected
 if (request.getParameter("delete") != null) {
     productList.remove(productID);
 }
-// Save the updated list of products
-        session.setAttribute("productList", productList);
+// update the product selected
+if (request.getParameter("update") != null) {
+    ArrayList<Object> product = new ArrayList<Object>();
+    product.add(productName);
+    product.add(productPrice);
+    product.add(productCategory);
+    productList.put(productID, product);
+}
+
+// Store the product list in the session
+session.setAttribute("productList", productList);
 %>
 
 <!--
