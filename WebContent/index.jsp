@@ -32,6 +32,8 @@
 <br/>	
 <h2 align="center"><a href="userinfo.jsp">User's Information</a></h2>
 <br/>	
+<h2 align="center"><a href="listuserorder.jsp">User's Orders</a></h2>
+<br/>	
 <h2 align="center"><a href="edit.jsp">Edit User Information</a></h2>
 <br/>	
 <h2 align="center"><a href="listprod.jsp">Begin Shopping</a></h2>
