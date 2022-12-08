@@ -1,2 +1,2 @@
-<H1 align="center"><font face="cursive" color="#3399FF"><a href="index.jsp">FocusBuddy</a></font></H1>      
+<H1 align="center"><a href="index.jsp">FocusBuddy</a></H1>      
 <hr>
