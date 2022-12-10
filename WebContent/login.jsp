@@ -15,7 +15,7 @@
 %>
 <body>
 	<header>
-		<a href = "index.jsp" class = "logo"><i class = "ri-home-heart-fill"></i><span>FocusBuddy</span></a>
+		<a href = "index.html" class = "logo"><i class = "ri-home-heart-fill"></i><span>FocusBuddy</span></a>
 		
 				<u1 class="navbar">
 					<li><a href="userinfo.jsp">User's Information</a></li>
