@@ -1,0 +1,4 @@
+
+main:
+    - { url: '/', text: 'Home' }
+    - { url: '/login.jsp', text: 'Login' }
